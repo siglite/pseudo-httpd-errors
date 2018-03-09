@@ -16,7 +16,7 @@ end
 
 task :make_config do
   conf  = File.open("Apache-errors.conf", "w")
-  files = Dir.glob("src/*.html")
+  files = Dir.glob("src/*.html").sort
 
   files.each do |f|
     status, redirect_to = split f
