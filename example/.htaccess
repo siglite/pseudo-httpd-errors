@@ -1,0 +1,56 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  ### 4xx ###
+
+  RewriteRule ^400.html$ - [L,R=400] # Bad Request
+  RewriteRule ^401.html$ - [L,R=401] # Unauthorized
+                                     # Payment Required
+  RewriteRule ^403.html$ - [L,R=403] # Forbidden
+  RewriteRule ^404.html$ - [L,R=404] # Not Found
+  RewriteRule ^405.html$ - [L,R=405] # Method Not Allowed
+  RewriteRule ^406.html$ - [L,R=406] # Not Acceptable
+  RewriteRule ^407.html$ - [L,R=407] # Proxy Authentication Required
+  RewriteRule ^408.html$ - [L,R=408] # Request Timeout
+                                     # Conflict (?)
+  RewriteRule ^410.html$ - [L,R=410] # Gone
+  RewriteRule ^411.html$ - [L,R=411] # Length Required
+  RewriteRule ^412.html$ - [L,R=412] # Precondition Failed
+  RewriteRule ^413.html$ - [L,R=413] # Request Entity Too Large (-> Payload Too Large)
+  RewriteRule ^414.html$ - [L,R=414] # Request-URI Too Long (-> URI Too Long)
+  RewriteRule ^415.html$ - [L,R=415] # Unsupported Media Type
+  RewriteRule ^416.html$ - [L,R=416] # Requested Range Not Satisfiable (-> Range Not Satisfiable)
+  RewriteRule ^417.html$ - [L,R=417] # Expectation Failed
+                                     # I'm A Teapot
+                                     # 419
+                                     # 420
+  RewriteRule ^421.html$ - [L,R=421] # Misdirected Request (HTTP/2)
+                                     # Unprocessable Entity (WebDAV)
+                                     # Locked (WebDAV)
+                                     # Failed Dependency (WebDAV)
+                                     # 425
+  RewriteRule ^426.html$ - [L,R=426] # Upgrade Required
+                                     # 427
+  RewriteRule ^428.html$ - [L,R=428] # Precondition Required
+  RewriteRule ^429.html$ - [L,R=429] # Too Many Requests
+                                     # 430
+  RewriteRule ^431.html$ - [L,R=431] # Request Header Fields Too Large
+                                     # 432-450
+  RewriteRule ^451.html$ - [L,R=451] # Unavailable For Legal Reasons
+
+  ### 5xx ###
+
+  RewriteRule ^500.html$ - [L,R=500] # Internal Server Error
+  RewriteRule ^501.html$ - [L,R=501] # Not Implemented
+  RewriteRule ^502.html$ - [L,R=502] # Bad Gateway
+  RewriteRule ^503.html$ - [L,R=503] # Service Unavailable
+  RewriteRule ^504.html$ - [L,R=504] # Gateway Timeout
+                                     # HTTP Version Not Supported (?)
+  RewriteRule ^506.html$ - [L,R=506] # Variant Also Negotiates
+  RewriteRule ^507.html$ - [L,R=507] # Insufficient Storage
+  RewriteRule ^508.html$ - [L,R=508] # Loop Detected
+                                     # 509
+  RewriteRule ^510.html$ - [L,R=510] # Not Extended
+  RewriteRule ^511.html$ - [L,R=511] # Network Authentication Required
+</IfModule>
